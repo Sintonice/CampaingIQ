@@ -1,15 +1,26 @@
 # CampaignIQ
 
-A React application for visualizing and analyzing marketing campaign performance.
+A client-side dashboard for analyzing digital advertising campaign performance — built to surface what's working, what's wasting budget, and where to act.
 
 Built with React, TypeScript, and Vite.
 
-## Features
+## What it does
 
-- Ingest campaign metadata from a local JSON file
-- Display key metrics: impressions, clicks, conversions, and CTR
-- Filter and compare campaigns side by side
-- Fully client-side — drop in your data and go
+- Ingests campaign data from a local JSON file (no backend required)
+- Calculates key performance metrics per campaign: CTR, CPC, conversion rate, and ROAS
+- Flags underperforming campaigns — high spend, low conversions
+- Enables side-by-side comparison across campaigns, placements, and segments
+- Designed for fast iteration: drop in new data and the dashboard updates instantly
+
+## Metrics tracked
+
+| Metric             | Description                                 |
+|--------------------|---------------------------------------------|
+| CTR                | Click-through rate (clicks / impressions)   |
+| CPC                | Cost per click (spend / clicks)             |
+| Conversion rate    | Conversions / clicks                        |
+| ROAS               | Return on ad spend (revenue / spend)        |
+| Budget efficiency  | Flags campaigns burning budget without ROI  |
 
 ## Tech stack
 
@@ -22,14 +33,9 @@ Built with React, TypeScript, and Vite.
 **Prerequisites:** Node.js 18+
 
 ```bash
-# Clone the repo
 git clone https://github.com/Sintonice/CampaingIQ.git
 cd CampaingIQ
-
-# Install dependencies
 npm install
-
-# Start the dev server
 npm run dev
 ```
 
@@ -37,28 +43,28 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## Data format
 
-Campaign data is loaded from `metadata.json` at the project root. Each entry follows this shape:
+Campaign data is loaded from `metadata.json` at the project root:
 
 ```json
 [
   {
     "id": "campaign-1",
-    "name": "Summer Sale",
+    "name": "Summer Sale — Meta Ads",
     "impressions": 50000,
     "clicks": 1200,
     "conversions": 340,
-    "budget": 2000
+    "spend": 2000,
+    "revenue": 8500
   }
 ]
 ```
 
-Edit `metadata.json` to load your own campaigns — no backend needed.
+Edit `metadata.json` to load your own campaigns. Supports any platform — Meta Ads, Google Display, Taboola, Outbrain.
 
 ## Available scripts
 
-| Command           | Description                            |
-|-------------------|----------------------------------------|
-| `npm run dev`     | Start local development server         |
-| `npm run build`   | Build for production (outputs `dist/`) |
-| `npm run preview` | Preview the production build locally   |
-| `npm run lint`    | Run ESLint                             |
+| Command             | Description                            |
+|---------------------|----------------------------------------|
+| `npm run dev`       | Start local development server         |
+| `npm run build`     | Build for production (outputs `dist/`) |
+| `npm run preview`   | Preview the production build locally   |
