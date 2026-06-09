@@ -1,0 +1,6 @@
+{
+  "name": "CampaignIQ",
+  "description": "A professional web dashboard for digital marketing agencies to analyze advertising campaign performance across Meta Ads and Google Ads with AI-generated insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

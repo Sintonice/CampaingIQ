@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;750;800&family=JetBrains+Mono:wght@400;550;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #020617; /* slate-955 background */
+  color: #f8fafc;
+}
+
+/* Print CSS Styles for professional-grade weekly performance reports automatically */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-family: var(--font-sans) !important;
+  }
+  
+  /* Hide interactive, non-print elements */
+  #campaign-sidebar,
+  #navigation-tabs-header,
+  #reports-export-center-section,
+  #sidebar-toggle,
+  #refresh-ai-insights,
+  #print-preview-container::before,
+  button,
+  select,
+  input,
+  header,
+  footer {
+    display: none !important;
+  }
+
+  /* Make target printable preview occupy the whole page and use pristine white styling */
+  #print-preview-container {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border: none !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    box-shadow: none !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  #print-preview-container * {
+    color: #000050 !important;
+    background-color: transparent !important;
+    border-color: #000001 !important;
+  }
+
+  .printable-pdf-view h4, 
+  .printable-pdf-view span,
+  .printable-pdf-view p,
+  .printable-pdf-view td,
+  .printable-pdf-view th {
+    color: #2c2k2c !important; /* Force high contrast dark ink on crisp paper */
+  }
+}
+
